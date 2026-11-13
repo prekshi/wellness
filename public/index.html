@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Sthira Waitlist</title>
+<meta name="description" content="Physician-led weight management. Home blood test, video doctor consults, a personal coach and a plan built around Indian food.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: mobile-first consumer page. Peach hero with a care-team chat mockup, white content bands, navy medical band, stepped quiz card, sticky bottom CTA on phones. Single light look by choice. */
+:root{
+  --ink:#14213D; --text:#3A4358; --muted:#6B7489; --line:#ECE6E1;
+  --bg:#FFFFFF; --peach:#FFF3EC; --peach-2:#FFE3D5; --mint:#E9F6EF; --mint-ink:#1F7A51;
+  --brand:#EE5A2F; --brand-dark:#C9431C; --navy:#14213D; --navy-2:#1E2D52; --err:#C4352B;
+  --head:"Poppins", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --body:"Nunito Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--head);color:var(--ink);margin:0;line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/1 var(--head);padding:16px 24px;border-radius:12px;border:0;background:var(--brand);color:#fff;cursor:pointer;text-decoration:none;box-shadow:0 6px 16px -6px rgba(238,90,47,.55);transition:background .15s ease, transform .15s ease}
+.btn:hover{background:var(--brand-dark)}
+.btn:active{transform:translateY(1px)}
+.btn.light{background:#fff;color:var(--ink);box-shadow:0 1px 0 var(--line), 0 0 0 1.5px var(--line) inset}
+.btn.light:hover{background:var(--peach)}
+.btn[disabled]{opacity:.6;cursor:wait}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:#fff}
+.nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.logo{display:inline-flex;align-items:center;gap:8px;font:700 22px/1 var(--head);color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.logo i{width:26px;height:26px;border-radius:8px;background:var(--brand);display:grid;place-items:center}
+.logo i::after{content:"";width:10px;height:10px;border-radius:50%;background:#fff}
+.nav .btn{padding:14px 16px;font-size:14px;box-shadow:none;min-height:44px}
+
+/* hero */
+.hero{background:linear-gradient(180deg, var(--peach) 0%, #FFF8F4 100%);padding-block:40px 56px;overflow:hidden}
+.hero-grid{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}.hero{padding-block:72px 80px}}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--peach-2);border-radius:999px;padding:7px 14px;font:600 13px/1.2 var(--body);color:var(--ink)}
+.pill b{width:8px;height:8px;border-radius:50%;background:var(--mint-ink);box-shadow:0 0 0 4px var(--mint)}
+.hero h1{font-size:clamp(34px, 5.4vw, 56px);font-weight:700;margin-top:18px}
+.hero h1 span{color:var(--brand)}
+.hero .sub{font-size:clamp(17px, 2vw, 19px);margin-top:16px;max-width:52ch}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:28px}
+.hero-cta small{font-size:14px;color:var(--muted)}
+.ticks{display:flex;flex-wrap:wrap;gap:10px 18px;margin:24px 0 0;padding:0;list-style:none;font-weight:600;color:var(--ink);font-size:15px}
+.ticks li{display:flex;align-items:center;gap:6px}
+.ticks .ic{width:18px;height:18px;color:var(--mint-ink);stroke-width:2.4}
+
+/* phone mock */
+.mock{position:relative;justify-self:center;width:min(320px, 100%)}
+.phone{background:var(--navy);border-radius:40px;padding:10px;box-shadow:0 30px 60px -25px rgba(20,33,61,.45)}
+.screen{background:#F7F5F3;border-radius:31px;padding:20px 14px 18px;display:grid;gap:10px}
+.screen.chat{background:#EFE9E3;padding:0 0 14px;gap:8px;overflow:hidden}
+.chat-top{display:flex;gap:10px;align-items:center;background:#fff;padding:18px 14px 12px;border-bottom:1px solid var(--line)}
+.chat-top p{font:600 14.5px/1.2 var(--head);color:var(--ink)}
+.chat-top small{display:block;font:400 11.5px var(--body);color:var(--muted)}
+.msg{max-width:84%;padding:9px 12px 7px;border-radius:14px;font-size:13px;line-height:1.4;color:var(--ink);box-shadow:0 1px 1px rgba(20,33,61,.08);margin:0 12px}
+.msg.in{background:#fff;justify-self:start;border-top-left-radius:4px}
+.msg.out{background:var(--peach-2);justify-self:end;border-top-right-radius:4px}
+.msg time{display:block;text-align:right;font-size:10px;color:var(--muted);margin-top:2px}
+.msg b{font-weight:700}
+.file{display:flex;gap:8px;align-items:center;background:#F7F5F3;border-radius:10px;padding:8px;margin-bottom:4px}
+.file .ic{width:20px;height:20px;color:var(--brand)}
+.file small{display:block;color:var(--muted);font-size:11px}
+.day{justify-self:center;font-size:10.5px;color:var(--muted);background:#fff;border-radius:8px;padding:3px 8px;margin-top:10px}
+.av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:600 14px var(--head);color:#fff;background:var(--brand);flex:none}
+.av.n{background:var(--mint-ink)}
+.card-a{background:#fff;border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center;box-shadow:0 1px 2px rgba(20,33,61,.06)}
+.card-a h4{font-size:14px}
+.card-a p{font-size:12.5px;color:var(--muted);line-height:1.4}
+.ring{width:62px;height:62px;flex:none}
+.ring circle{fill:none;stroke-width:7}
+.ring .bg{stroke:var(--peach-2)}
+.ring .fg{stroke:var(--brand);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%}
+.ring text{font:700 15px var(--head);fill:var(--ink)}
+.minis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini{background:#fff;border-radius:16px;padding:12px;box-shadow:0 1px 2px rgba(20,33,61,.06)}
+.mini small{font-size:11.5px;color:var(--muted);display:block}
+.mini b{font:600 17px/1.3 var(--head);color:var(--ink)}
+.bar{height:6px;border-radius:99px;background:var(--mint);margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--mint-ink);border-radius:99px}
+.float{position:absolute;right:-12px;top:-18px;background:#fff;border-radius:14px;padding:10px 12px;display:flex;gap:8px;align-items:center;font:600 13px/1.25 var(--head);color:var(--ink);box-shadow:0 14px 30px -12px rgba(20,33,61,.35)}
+.float .ic{width:20px;height:20px;color:var(--mint-ink);stroke-width:2.2}
+.float small{display:block;font:400 11.5px var(--body);color:var(--muted)}
+@media (max-width:420px){.float{right:0}}
+
+/* trust strip */
+.trust{border-bottom:1px solid var(--line)}
+.trust ul{list-style:none;margin:0;padding:22px 0;display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:16px}
+@media (min-width:800px){.trust ul{grid-template-columns:repeat(4, minmax(0,1fr))}}
+.trust li{display:flex;gap:10px;align-items:center;font:600 14.5px/1.3 var(--body);color:var(--ink);min-width:0}
+.trust .ic{color:var(--brand)}
+
+/* sections */
+.sec{padding-block:64px}
+@media (min-width:900px){.sec{padding-block:88px}}
+.sec-head{max-width:640px;margin-bottom:32px;display:grid;gap:10px}
+.sec-head h2{font-size:clamp(27px, 3.6vw, 38px);font-weight:700}
+.sec-head p{font-size:17.5px}
+.kicker{font:600 14px/1 var(--head);color:var(--brand)}
+
+/* for you */
+.foryou{display:grid;gap:12px;margin:0;padding:0}
+@media (min-width:760px){.foryou{grid-template-columns:repeat(2, minmax(0,1fr))}}
+.foryou li{list-style:none;display:flex;gap:12px;align-items:flex-start;background:var(--peach);border-radius:16px;padding:18px;font-weight:600;color:var(--ink)}
+.foryou .ic{color:var(--brand);stroke-width:2.4;width:22px;height:22px;margin-top:2px}
+.foryou ul{padding:0;margin:0;display:contents}
+
+/* steps */
+.steps{display:grid;gap:16px;list-style:none;margin:0;padding:0;counter-reset:s}
+@media (min-width:800px){.steps{grid-template-columns:repeat(4, minmax(0,1fr))}}
+.steps li{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;display:grid;gap:8px;align-content:start;counter-increment:s}
+.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font:700 16px var(--head);margin-bottom:6px}
+.steps h3{font-size:18px}
+.steps p{font-size:15.5px}
+.steps .when{font:600 13px var(--body);color:var(--mint-ink)}
+
+/* included */
+.inc{display:grid;gap:14px;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr))}
+.inc div{display:grid;gap:8px;padding:20px;border-radius:18px;background:#FAF8F6}
+.inc .badge{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;color:var(--brand);box-shadow:0 1px 2px rgba(20,33,61,.08)}
+.inc h3{font-size:17px}
+.inc p{font-size:15.5px}
+
+/* medical band */
+.med{background:var(--navy);color:#C9D1E4}
+.med-grid{display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.med-grid{grid-template-columns:1fr 1fr;gap:56px}}
+.med h2{color:#fff;font-size:clamp(27px, 3.6vw, 38px)}
+.med .kicker{color:#FFB79C}
+.med p{font-size:17px}
+.med-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.med-list li{display:flex;gap:14px;background:var(--navy-2);border-radius:16px;padding:16px 18px;align-items:flex-start}
+.med-list .ic{color:#FFB79C;margin-top:2px}
+.med-list b{display:block;color:#fff;font:600 16px/1.35 var(--head);margin-bottom:2px}
+.med-list span{font-size:15px}
+
+/* plans */
+.plans{display:grid;gap:16px;align-items:stretch}
+@media (min-width:900px){.plans{grid-template-columns:repeat(3, minmax(0,1fr))}}
+.plan{position:relative;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:26px 24px;display:flex;flex-direction:column;gap:16px}
+.plan.hl{border-color:var(--brand);box-shadow:0 20px 40px -24px rgba(238,90,47,.5)}
+.plan .tag{position:absolute;top:-13px;left:24px;background:var(--brand);color:#fff;font:600 12px/1 var(--head);padding:7px 12px;border-radius:999px}
+.plan h3{font-size:20px}
+.plan .for{font-size:14.5px;color:var(--muted);margin-top:-8px}
+.price{font:700 38px/1 var(--head);color:var(--ink);font-variant-numeric:tabular-nums}
+.price small{font:400 15px var(--body);color:var(--muted)}
+.pm{font:700 14.5px/1.2 var(--body);color:var(--mint-ink);margin-top:-8px}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15.5px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li .ic{width:18px;height:18px;color:var(--mint-ink);stroke-width:2.4;margin-top:3px}
+.plan .btn{margin-top:auto;width:100%}
+.note{margin-top:20px;font-size:14.5px;color:var(--muted);max-width:72ch}
+
+/* measure */
+.measure{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.measure span{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--mint-ink);border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px}
+.measure .ic{width:18px;height:18px}
+
+/* quiz */
+.quiz-sec{background:var(--peach)}
+.quiz{max-width:720px;margin:0 auto;background:#fff;border-radius:24px;padding:24px;box-shadow:0 24px 50px -30px rgba(20,33,61,.35)}
+@media (min-width:700px){.quiz{padding:36px}}
+.q-top{display:flex;justify-content:space-between;align-items:center;font:600 14px var(--head);color:var(--muted);margin-bottom:10px}
+.q-prog{height:6px;background:var(--peach-2);border-radius:99px;overflow:hidden;margin-bottom:26px}
+.q-prog i{display:block;height:100%;background:var(--brand);border-radius:99px;transition:width .3s ease}
+.step{display:grid;gap:20px}
+.step h3{font-size:clamp(21px, 3vw, 26px)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:14px}
+.f{display:grid;gap:6px;min-width:0}
+.f label,.lg{font:600 14.5px/1.3 var(--body);color:var(--ink)}
+.f .hint{font-size:13px;color:var(--muted)}
+input[type=text],input[type=tel],input[type=number],select{width:100%;min-width:0;font:400 16px/1.3 var(--body);color:var(--ink);background:#FBFAF9;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px}
+input:focus,select:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px var(--peach-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;background:#fff;user-select:none}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip:has(input:checked){border-color:var(--brand);background:var(--peach);color:var(--brand-dark)}
+.chip:has(input:focus-visible){outline:3px solid var(--brand);outline-offset:2px}
+.opts{display:grid;gap:10px}
+.opt{position:relative;display:flex;gap:12px;align-items:center;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;font-weight:600;color:var(--ink);background:#fff}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .dot{width:20px;height:20px;border-radius:50%;border:2px solid #C7C2BE;flex:none;display:grid;place-items:center}
+.opt:has(input:checked){border-color:var(--brand);background:var(--peach)}
+.opt:has(input:checked) .dot{border-color:var(--brand)}
+.opt:has(input:checked) .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--brand)}
+.opt:has(input:focus-visible){outline:3px solid var(--brand);outline-offset:2px}
+.opt small{display:block;font-weight:400;font-size:14px;color:var(--muted)}
+.bmi{display:flex;gap:16px;align-items:center;background:var(--mint);border-radius:16px;padding:16px 18px}
+.bmi b{font:700 32px/1 var(--head);color:var(--mint-ink);font-variant-numeric:tabular-nums;min-width:64px}
+.bmi p{font-size:14.5px;color:var(--ink)}
+.q-nav{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-top:6px}
+.q-nav .btn{flex:1}
+.q-nav .back{flex:none;background:none;border:0;font:600 15px var(--head);color:var(--muted);cursor:pointer;padding:12px 4px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted)}
+.consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--brand);flex:none}
+.err{color:var(--err);font-size:14.5px;font-weight:600}
+.fine{font-size:13px;color:var(--muted);text-align:center}
+.done{text-align:center;display:grid;gap:14px;justify-items:center}
+.done .big{width:64px;height:64px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:var(--mint-ink)}
+.done .big .ic{width:32px;height:32px;stroke-width:2.4}
+.done h3{font-size:26px}
+.share{display:flex;flex-wrap:wrap;gap:10px;width:100%;margin-top:6px}
+.share code{flex:1 1 220px;min-width:0;font:400 13.5px/1.4 ui-monospace, Menlo, monospace;background:#FBFAF9;border:1.5px dashed var(--line);border-radius:12px;padding:12px;overflow-wrap:anywhere;user-select:all;text-align:left}
+
+/* faq */
+.faq{max-width:780px;display:grid;gap:10px}
+.faq details{background:#FAF8F6;border-radius:16px;padding:4px 20px}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px;font:600 16.5px/1.35 var(--head);color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{transition:transform .2s ease;color:var(--muted)}
+.faq details[open] summary .ic{transform:rotate(180deg)}
+.faq details p{padding-bottom:18px;font-size:16px}
+
+/* closing band */
+.close{background:var(--brand);color:#fff;border-radius:28px;padding:40px 28px;display:grid;gap:18px;justify-items:start}
+@media (min-width:800px){.close{grid-template-columns:1fr auto;align-items:center;padding:48px}}
+.close h2{color:#fff;font-size:clamp(26px, 3.4vw, 36px)}
+.close p{color:#FFE3D5}
+.close .btn{background:#fff;color:var(--brand-dark);box-shadow:none}
+.close .btn:hover{background:var(--peach)}
+
+footer{padding-block:40px 120px;font-size:14px;color:var(--muted)}
+@media (min-width:900px){footer{padding-bottom:48px}}
+footer .wrap{display:grid;gap:10px}
+
+/* sticky bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));display:flex;gap:12px;align-items:center;justify-content:space-between;transition:transform .25s ease}
+.sticky p{font:600 14px/1.3 var(--head);color:var(--ink)}
+.sticky small{display:block;font:400 12.5px var(--body);color:var(--muted)}
+.sticky.off{transform:translateY(110%)}
+@media (min-width:900px){.sticky{display:none}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.7 3h10.6A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 14h9"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 7.5c0-1.5 1-2 1-3.5M12 7.5c0-1.5 1-2 1-3.5M16 7.5c0-1.5 1-2 1-3.5"/></symbol>
+  <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M6 6v12M3 9v6M18 6v12M21 9v6M6 12h12"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v2.5a5 5 0 0 0 10 0V14"/><circle cx="20" cy="12" r="2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-6M2 20h20"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="8" rx="2"/><path d="M6 8v3M10 8v4M14 8v3M18 8v4"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M4 12h4l3-7 4 14 3-7h2"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#"><i></i>sthira</a>
+    <a class="btn" href="#fit" data-cta="header">Check eligibility</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill"><b></b>Now enrolling · Delhi pilot · 50 seats</span>
+        <h1>Manage your weight with a <span>doctor and a coach</span> in your corner</h1>
+        <p class="sub">A doctor-led programme built around Indian food, your routine and your blood reports. Medical treatment is added only if your doctor says it's right for you.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#fit" data-cta="hero">Check if you're eligible</a>
+          <small>Plans from <b style="color:var(--ink)">₹3,500 a month</b><br>Free check · no payment now · cancel anytime</small>
+        </div>
+        <ul class="ticks">
+          <li><svg class="ic"><use href="#i-check"/></svg>Blood test at home</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Video doctor consults</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Coach on WhatsApp</li>
+        </ul>
+      </div>
+
+      <div class="mock" aria-hidden="true">
+        <div class="phone"><div class="screen chat">
+          <div class="chat-top"><span class="av">S</span><p>Sthira care team<small>Coach Neha · doctor on your plan</small></p></div>
+          <span class="day">Today</span>
+          <div class="msg in"><div class="file"><svg class="ic"><use href="#i-flask"/></svg><span>Blood report.pdf<small>42 markers</small></span></div>Your report is in. Doctor will go through it on your call Thursday, 6 pm.<time>9:12</time></div>
+          <div class="msg out">Lunch: 2 rotis, dal, paneer sabzi<time>1:40</time></div>
+          <div class="msg in">Nice, that's about 30 g protein. Add curd or eggs at dinner to reach your <b>90 g</b>.<time>1:46</time></div>
+          <div class="msg in">Saturday plan: one 20-minute strength session at home. Want the video?<time>6:05</time></div>
+          <div class="msg out">Done! Squats were hard 😅<time>7:30</time></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="wrap">
+      <ul>
+        <li><svg class="ic"><use href="#i-steth"/></svg>Led by an MD physician</li>
+        <li><svg class="ic"><use href="#i-flask"/></svg>40+ marker test at home</li>
+        <li><svg class="ic"><use href="#i-chat"/></svg>Weekly coach check-ins</li>
+        <li><svg class="ic"><use href="#i-shield"/></svg>Your health data stays private</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><p class="kicker">Is this for you?</p><h2>Built for people who've tried the diet chart already</h2></div>
+      <ul class="foryou">
+        <li><svg class="ic"><use href="#i-check"/></svg>Your weight has crept up over the years and diets haven't stuck</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You have PCOS, prediabetes, thyroid or fatty liver</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You want a doctor to read your reports, not just a dietitian's plan</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You want results that last after the programme ends</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><p class="kicker">How it works</p><h2>From blood test to a plan you can live with</h2></div>
+      <ol class="steps">
+        <li><span class="when">Week 1</span><h3>Blood test at home</h3><p>A phlebotomist collects your sample at home. 40+ markers including thyroid, sugar, lipids and liver.</p></li>
+        <li><span class="when">Week 1</span><h3>Doctor consult</h3><p>A video consult to go through your reports and history, and set your medical plan.</p></li>
+        <li><span class="when">Months 1 to 6</span><h3>Your coach on WhatsApp</h3><p>Send meal photos and your weekly weight to your coach. Weekly check-ins and quick answers when you're stuck.</p></li>
+        <li><span class="when">After 6 months</span><h3>Maintain</h3><p>Monthly weigh-ins and quarterly blood tests so your progress holds.</p></li>
+      </ol>
+      <div style="margin-top:28px"><a class="btn" href="#fit" data-cta="how_it_works">Check if you're eligible</a></div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><p class="kicker">What's included</p><h2>Everything in one plan, one team</h2></div>
+      <div class="inc">
+        <div><span class="badge"><svg class="ic"><use href="#i-bowl"/></svg></span><h3>Indian meal plan</h3><p>Protein-first meals with dal, paneer, eggs, curd and rotis. Send a photo of your plate for feedback.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-dumbbell"/></svg></span><h3>Strength routine</h3><p>Short home or gym sessions to protect muscle, scaled to where you start.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-chat"/></svg></span><h3>Personal coach</h3><p>Weekly check-ins and quick answers on WhatsApp when you're stuck.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-moon"/></svg></span><h3>Sleep and cravings</h3><p>Small weekly habits for sleep, water and late-night snacking.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-video"/></svg></span><h3>Doctor reviews</h3><p>Monthly reviews of your progress and reports by your physician.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-flask"/></svg></span><h3>Repeat blood tests</h3><p>Track sugar, lipids and liver markers as you go, not just the scale.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec med">
+    <div class="wrap med-grid">
+      <div style="display:grid;gap:14px">
+        <p class="kicker">Medical care</p>
+        <h2>Treatment only when it's right for you</h2>
+        <p>Some people need more than lifestyle changes. After your blood test and consult, your doctor decides whether medical treatment can help. Many members do the programme on lifestyle alone.</p>
+      </div>
+      <ul class="med-list">
+        <li><svg class="ic"><use href="#i-steth"/></svg><div><b>Prescribed by a specialist</b><span>Only after a consult and blood work. Never sold without a prescription.</span></div></li>
+        <li><svg class="ic"><use href="#i-pause"/></svg><div><b>Monitored every month</b><span>Your doctor reviews progress and side effects, and adjusts the plan.</span></div></li>
+        <li><svg class="ic"><use href="#i-chart"/></svg><div><b>Stepped down safely</b><span>When you're ready, treatment is tapered while your habits carry you.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="plans">
+    <div class="wrap">
+      <div class="sec-head"><p class="kicker">Founding member pricing</p><h2>Pick your programme length</h2><p>Nothing is charged now. Joining the waitlist holds this price for you when the cohort opens. All prices include taxes.</p></div>
+      <div class="plans">
+        <article class="plan">
+          <h3>1 month</h3><p class="for">Try it at the starting dose</p>
+          <p class="price">₹4,999<small> total</small></p>
+          <ul>
+            <li><svg class="ic"><use href="#i-check"/></svg>Home blood test and doctor consult</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>4 weeks of treatment if your doctor prescribes it</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Coach, Indian meal plan and strength routine</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Month-end doctor review</li>
+          </ul>
+          <button class="btn light" type="button" data-tier="m1">Choose 1 month</button>
+        </article>
+        <article class="plan hl">
+          <span class="tag">Full programme</span>
+          <h3>4 months</h3><p class="for">Covers the full dose step-up your doctor plans</p>
+          <p class="price">₹13,999<small> total</small></p>
+          <p class="pm">₹3,500 a month</p>
+          <ul>
+            <li><svg class="ic"><use href="#i-check"/></svg>Everything in 1 month</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>16 weeks of treatment if prescribed, adjusted monthly</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>4 doctor reviews and side-effect support</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Blood tests at the start and in month 4</li>
+          </ul>
+          <button class="btn" type="button" data-tier="m4">Choose 4 months</button>
+        </article>
+        <article class="plan">
+          <h3>6 months</h3><p class="for">Time to hold your progress and step down safely</p>
+          <p class="price">₹25,999<small> total</small></p>
+          <p class="pm">₹4,333 a month</p>
+          <ul>
+            <li><svg class="ic"><use href="#i-check"/></svg>Everything in 4 months</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>24 weeks of treatment if prescribed</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>6 doctor reviews</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Doctor-guided step-down plan at the end</li>
+          </ul>
+          <button class="btn light" type="button" data-tier="m6">Choose 6 months</button>
+        </article>
+      </div>
+      <p class="note">Treatment is prescribed only after your blood test and consult, and only when clinically appropriate. Not eligible? You get a full refund except the blood test, or you can continue on coaching and nutrition alone at ₹1,999 a month.</p>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><p class="kicker">Results you can check</p><h2>We track more than your weight</h2><p>Every cohort's results will be published, including the numbers that don't flatter us.</p></div>
+      <div class="measure">
+        <span><svg class="ic"><use href="#i-ruler"/></svg>Waist in cm</span>
+        <span><svg class="ic"><use href="#i-dumbbell"/></svg>Muscle kept</span>
+        <span><svg class="ic"><use href="#i-flask"/></svg>HbA1c, lipids, liver</span>
+        <span><svg class="ic"><use href="#i-chart"/></svg>Weight held 6 months later</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec quiz-sec" id="fit">
+    <div class="wrap">
+      <div class="sec-head" style="margin-inline:auto;text-align:center;justify-items:center"><p class="kicker">Free eligibility check</p><h2>See if Sthira fits you</h2><p>Four short steps. A doctor confirms the right plan at your consult.</p></div>
+
+      <div class="quiz">
+        <form id="quiz" novalidate>
+          <div class="q-top"><span id="qLabel">Step 1 of 4</span><span id="qName">About you</span></div>
+          <div class="q-prog"><i id="qBar" style="width:25%"></i></div>
+
+          <div class="step" data-step="1">
+            <h3>Let's start with the basics</h3>
+            <div class="grid2">
+              <div class="f"><label for="f_height">Height (cm)</label><input id="f_height" name="height_cm" type="number" inputmode="decimal" min="120" max="220" required placeholder="162"></div>
+              <div class="f"><label for="f_weight">Weight (kg)</label><input id="f_weight" name="weight_kg" type="number" inputmode="decimal" min="35" max="250" required placeholder="78"></div>
+            </div>
+            <div class="grid2">
+              <div class="f"><label for="f_age">Age</label><input id="f_age" name="age" type="number" inputmode="numeric" min="18" max="80" required placeholder="34"></div>
+              <div class="f"><label for="f_sex">Sex</label><select id="f_sex" name="sex" required><option value="">Select</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div>
+              <div class="f"><label for="f_waist">Waist (cm), optional</label><input id="f_waist" name="waist_cm" type="number" inputmode="decimal" min="50" max="200" placeholder="94"></div>
+            </div>
+            <div class="bmi" id="bmiBox" hidden><b id="bmiNum">0</b><p id="bmiText"></p></div>
+          </div>
+
+          <div class="step" data-step="2" hidden>
+            <h3>Anything we should know about your health?</h3>
+            <div class="f">
+              <span class="lg">Do you have any of these?</span>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="conditions" value="diabetes_prediabetes">Diabetes or prediabetes</label>
+                <label class="chip"><input type="checkbox" name="conditions" value="pcos">PCOS</label>
+                <label class="chip"><input type="checkbox" name="conditions" value="thyroid">Thyroid</label>
+                <label class="chip"><input type="checkbox" name="conditions" value="bp">High BP</label>
+                <label class="chip"><input type="checkbox" name="conditions" value="fatty_liver">Fatty liver</label>
+                <label class="chip"><input type="checkbox" name="conditions" value="none">None of these</label>
+              </div>
+            </div>
+            <div class="f">
+              <span class="lg">What have you tried before?</span>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="tried" value="diet">Diet plans</label>
+                <label class="chip"><input type="checkbox" name="tried" value="gym">Gym or trainer</label>
+                <label class="chip"><input type="checkbox" name="tried" value="app">A fitness app</label>
+                <label class="chip"><input type="checkbox" name="tried" value="weight_loss_medication">Prescription weight medication</label>
+                <label class="chip"><input type="checkbox" name="tried" value="nothing">Nothing structured yet</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="3" hidden>
+            <h3>What matters most to you?</h3>
+            <div class="opts" role="radiogroup" aria-label="Main goal">
+              <label class="opt"><input type="radio" name="goal" value="healthy_weight" required><span class="dot"></span>Getting to a healthier weight</label>
+              <label class="opt"><input type="radio" name="goal" value="health_markers"><span class="dot"></span>Improving my sugar, BP or reports</label>
+              <label class="opt"><input type="radio" name="goal" value="energy"><span class="dot"></span>More energy and stamina</label>
+              <label class="opt"><input type="radio" name="goal" value="keep_off"><span class="dot"></span>Keeping it off this time</label>
+              <label class="opt"><input type="radio" name="goal" value="confidence"><span class="dot"></span>Feeling confident in my body</label>
+            </div>
+            <span class="lg">Which plan would you join?</span>
+            <div class="opts" role="radiogroup" aria-label="Plan">
+              <label class="opt"><input type="radio" name="tier" value="m1" required><span class="dot"></span><span>1 month<small>₹4,999</small></span></label>
+              <label class="opt"><input type="radio" name="tier" value="m4"><span class="dot"></span><span>4 months<small>₹13,999 · ₹3,500 a month</small></span></label>
+              <label class="opt"><input type="radio" name="tier" value="m6"><span class="dot"></span><span>6 months<small>₹25,999 · ₹4,333 a month</small></span></label>
+              <label class="opt"><input type="radio" name="tier" value="lifestyle"><span class="dot"></span><span>Coaching and nutrition only<small>₹1,999 a month, no treatment</small></span></label>
+              <label class="opt"><input type="radio" name="tier" value="undecided"><span class="dot"></span><span>Not sure yet<small>The doctor can help me decide</small></span></label>
+            </div>
+          </div>
+
+          <div class="step" data-step="4" hidden>
+            <h3>Where should we reach you?</h3>
+            <div class="grid2">
+              <div class="f"><label for="f_name">Your name</label><input id="f_name" name="name" type="text" autocomplete="name" required placeholder="Priya Sharma"></div>
+              <div class="f"><label for="f_phone">WhatsApp number</label><input id="f_phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" required pattern="[6-9][0-9]{9}" placeholder="98XXXXXXXX"><span class="hint">10 digits. We'll message only about the programme.</span></div>
+            </div>
+            <div class="f"><label for="f_city">City</label><input id="f_city" name="city" type="text" autocomplete="address-level2" required placeholder="New Delhi"></div>
+            <label class="consent"><input id="f_consent" name="consent" type="checkbox" required><span>I agree to be contacted on WhatsApp or phone about this programme, and to my answers being stored so a doctor can assess fit. I can ask for my data to be deleted at any time.</span></label>
+          </div>
+
+          <p class="err" id="qErr" hidden style="margin-top:14px"></p>
+          <div class="q-nav" style="margin-top:22px">
+            <button class="back" type="button" id="qBack" hidden>Back</button>
+            <button class="btn" type="submit" id="qNext">Continue</button>
+          </div>
+          <p class="fine" style="margin-top:14px">This check is not a diagnosis or medical advice.</p>
+        </form>
+
+        <div class="done" id="done" hidden>
+          <span class="big"><svg class="ic"><use href="#i-check"/></svg></span>
+          <h3 id="doneTitle">You're on the list</h3>
+          <p id="doneText">We'll message you on WhatsApp when the Delhi cohort opens and book your home blood test first. Your founding price is held.</p>
+          <p style="font-weight:700;color:var(--ink);margin-top:6px">Doing this with a friend helps. Share your link:</p>
+          <div class="share"><code id="refLink"></code><button class="btn light" type="button" id="copyBtn">Copy link</button></div>
+          <p class="fine" id="copyMsg" hidden></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><p class="kicker">Questions</p><h2>Before you join</h2></div>
+      <div class="faq">
+        <details><summary>Is this a medication programme?<svg class="ic"><use href="#i-down"/></svg></summary><p>It's a doctor-led programme where coaching, food and strength come first. Treatment is included only if your doctor prescribes it after your blood test and consult. If it isn't right for you, you get a refund except the blood test, or you can continue on coaching and nutrition alone.</p></details>
+        <details><summary>Who are the doctors?<svg class="ic"><use href="#i-down"/></svg></summary><p>The clinical protocol is designed and supervised by a physician with an MD in Internal Medicine. Every prescription is written by a qualified specialist after a consult and blood work.</p></details>
+        <details><summary>What results can I expect?<svg class="ic"><use href="#i-down"/></svg></summary><p>We won't promise a number. Results depend on your starting point, your health and how closely you follow the plan. We measure carefully and publish every cohort's real results.</p></details>
+        <details><summary>What happens after 6 months?<svg class="ic"><use href="#i-down"/></svg></summary><p>You can move to Maintain: monthly weigh-ins and quarterly blood tests. If you were on treatment, your doctor steps it down gradually while your habits take over.</p></details>
+        <details><summary>Where is it available?<svg class="ic"><use href="#i-down"/></svg></summary><p>The first cohort is in Delhi NCR, with blood tests at home. Consults and coaching are online, so more cities will follow.</p></details>
+        <details><summary>What happens to my information?<svg class="ic"><use href="#i-down"/></svg></summary><p>Your answers are used only to assess fit and contact you about the programme. We don't sell or share them. Message us anytime to have them deleted.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="close">
+        <div style="display:grid;gap:10px"><h2>50 seats in the first Delhi cohort</h2><p>Check your eligibility in 2 minutes. No payment now.</p></div>
+        <a class="btn" href="#fit" data-cta="closing">Check if you're eligible</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#" style="font-size:18px"><i style="width:22px;height:22px"></i>sthira</a>
+    <p>Physician-led weight management. Pilot programme, Delhi.</p>
+    <p>Information on this page is general and not a substitute for medical advice. In an emergency, call 112.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <p>Free eligibility check<small>2 minutes · no payment</small></p>
+  <a class="btn" href="#fit" data-cta="sticky" style="padding:13px 18px;font-size:15px;box-shadow:none">Check now</a>
+</div>
+
+<script>
+(function(){
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbydD8dZQz_z1C8g9M6h5imSuRUVUFBmgpnmss8MIn-WqHQspqQD_xlFBo6fNzcGiCThVA/exec";
+
+  // ---- session, utm, referral ----
+  function rid(){ return Math.random().toString(36).slice(2, 10); }
+  var sid; try { sid = sessionStorage.getItem("sthira_sid") || rid(); sessionStorage.setItem("sthira_sid", sid); } catch(e){ sid = rid(); }
+  var q = new URLSearchParams(location.search);
+  var meta = { session_id: sid, utm_source: q.get("utm_source") || "", utm_medium: q.get("utm_medium") || "",
+    utm_campaign: q.get("utm_campaign") || "", utm_content: q.get("utm_content") || "", ref: q.get("ref") || "",
+    page: location.pathname, referrer: document.referrer || "" };
+
+  function post(body){
+    return fetch(ENDPOINT, { method: "POST", mode: "no-cors", keepalive: true,
+      headers: { "Content-Type": "text/plain;charset=utf-8" }, body: body });
+  }
+  function send(type, data){
+    if (!ENDPOINT) return Promise.resolve(false);
+    var body = JSON.stringify(Object.assign({ type: type, ts: new Date().toISOString() }, meta, data || {}));
+    return post(body).then(function(){ return true; })
+      .catch(function(){ return new Promise(function(r){ setTimeout(r, 1500); }).then(function(){ return post(body); }).then(function(){ return true; }, function(){ return false; }); });
+  }
+  send("view");
+
+  // ---- CTA + plan clicks ----
+  document.querySelectorAll("[data-cta]").forEach(function(a){ a.addEventListener("click", function(){ send("cta_click", { cta: a.dataset.cta }); }); });
+  document.querySelectorAll("[data-tier]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var t = b.dataset.tier;
+      send("tier_click", { tier: t });
+      var r = document.querySelector('input[name="tier"][value="' + t + '"]'); if (r) r.checked = true;
+      document.getElementById("fit").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  // ---- sticky bar hides while the quiz is on screen ----
+  var sticky = document.getElementById("sticky");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(es){ sticky.classList.toggle("off", es[0].isIntersecting); }, { threshold: 0.15 })
+      .observe(document.getElementById("fit"));
+  }
+
+  // ---- BMI with Indian cut-offs ----
+  var h = document.getElementById("f_height"), w = document.getElementById("f_weight");
+  var box = document.getElementById("bmiBox"), num = document.getElementById("bmiNum"), txt = document.getElementById("bmiText");
+  function bmiCalc(){
+    var hc = parseFloat(h.value), wk = parseFloat(w.value);
+    if (!(hc >= 120 && hc <= 220 && wk >= 35 && wk <= 250)) { box.hidden = true; return null; }
+    var b = wk / Math.pow(hc / 100, 2);
+    num.textContent = b.toFixed(1); box.hidden = false;
+    txt.textContent =
+      b < 18.5 ? "Your BMI is below the healthy range. This programme isn't designed for you, but you can still join to hear from us." :
+      b < 23 ? "Healthy range by Indian cut-offs. A doctor can still help if your waist or reports are a concern." :
+      b < 25 ? "Overweight by Indian cut-offs (23 to 24.9). A good time to act, before it shows in your reports." :
+      b < 30 ? "Obese range by Indian cut-offs (25 and above). The programme is built for this." :
+      "Obese range by Indian cut-offs. Your doctor will review your reports closely to set the safest plan.";
+    return Math.round(b * 10) / 10;
+  }
+  h.addEventListener("input", bmiCalc); w.addEventListener("input", bmiCalc);
+
+  // ---- "None" clears other conditions ----
+  document.querySelectorAll('input[name="conditions"]').forEach(function(c){
+    c.addEventListener("change", function(){
+      var all = document.querySelectorAll('input[name="conditions"]');
+      if (c.value === "none" && c.checked) all.forEach(function(x){ if (x !== c) x.checked = false; });
+      else if (c.checked) all.forEach(function(x){ if (x.value === "none") x.checked = false; });
+    });
+  });
+
+  // ---- stepped quiz ----
+  var form = document.getElementById("quiz"), steps = form.querySelectorAll(".step");
+  var label = document.getElementById("qLabel"), name = document.getElementById("qName"), bar = document.getElementById("qBar");
+  var err = document.getElementById("qErr"), back = document.getElementById("qBack"), next = document.getElementById("qNext");
+  var names = ["About you", "Your health", "Your goal", "Contact"], cur = 1, started = false;
+
+  form.addEventListener("input", function(){ if (!started) { started = true; send("form_start"); } });
+
+  function show(n){
+    cur = n; err.hidden = true;
+    steps.forEach(function(s){ s.hidden = Number(s.dataset.step) !== n; });
+    label.textContent = "Step " + n + " of 4"; name.textContent = names[n - 1];
+    bar.style.width = (n * 25) + "%";
+    back.hidden = n === 1;
+    next.textContent = n === 4 ? "Join the waitlist" : "Continue";
+    if (n > 1) send("quiz_step", { cta: "step_" + n });
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function check(n){
+    var s = form.querySelector('.step[data-step="' + n + '"]');
+    if (n === 4) { var p = document.getElementById("f_phone"); p.value = p.value.replace(/\D/g, "").replace(/^(91|0)(?=\d{10}$)/, ""); }
+    var bad = Array.prototype.filter.call(s.querySelectorAll("[required]"), function(el){ return !el.checkValidity(); });
+    if (n === 2 && !s.querySelector('input[name="conditions"]:checked')) { return "Pick at least one option, or \"None of these\"."; }
+    if (!bad.length) return "";
+    var el = bad[0];
+    if (el.type === "radio") return el.name === "goal" ? "Pick what matters most to you." : "Pick the plan you'd join.";
+    if (el.id === "f_consent") return "Please tick the consent box to continue.";
+    if (el.id === "f_phone") return "Enter a 10-digit Indian mobile number.";
+    var l = form.querySelector('label[for="' + el.id + '"]');
+    el.focus();
+    return "Please check " + (l ? l.textContent.toLowerCase() : "this field") + ".";
+  }
+  back.addEventListener("click", function(){ if (cur > 1) show(cur - 1); });
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var m = check(cur);
+    if (m) { err.textContent = m; err.hidden = false; return; }
+    if (cur < 4) { show(cur + 1); return; }
+    var fd = new FormData(form);
+    var data = {
+      name: fd.get("name").trim(), phone: fd.get("phone"), city: fd.get("city").trim(), age: fd.get("age"), sex: fd.get("sex"),
+      height_cm: fd.get("height_cm"), weight_kg: fd.get("weight_kg"), waist_cm: fd.get("waist_cm") || "", bmi: bmiCalc(),
+      conditions: fd.getAll("conditions").join(","), tried: fd.getAll("tried").join(","),
+      goal: fd.get("goal"), tier: fd.get("tier"), consent: "yes"
+    };
+    next.disabled = true; next.textContent = "Saving…";
+    send("signup", data).then(function(){
+      form.hidden = true;
+      var d = document.getElementById("done"); d.hidden = false;
+      document.getElementById("doneTitle").textContent = "You're on the list, " + data.name.split(" ")[0];
+      if (!ENDPOINT) document.getElementById("doneText").textContent = "Preview only: this answer was not saved. On the live page it goes to your sign-up sheet.";
+      document.getElementById("refLink").textContent = location.origin + location.pathname + "?ref=" + sid;
+      d.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+
+  // ---- copy referral link ----
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    var code = document.getElementById("refLink"), msg = document.getElementById("copyMsg");
+    send("share_copy");
+    function selectIt(){ var r = document.createRange(); r.selectNodeContents(code); var s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = "Link selected. Copy it from your keyboard."; msg.hidden = false; }
+    try { navigator.clipboard.writeText(code.textContent).then(function(){ msg.textContent = "Link copied."; msg.hidden = false; }, selectIt); }
+    catch(e){ selectIt(); }
+  });
+})();
+</script>
+</body>
+</html>
