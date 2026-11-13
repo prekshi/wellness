@@ -55,12 +55,27 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero .sub{font-size:clamp(17px, 2vw, 19px);margin-top:16px;max-width:52ch}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:28px}
 .hero-cta small{font-size:14px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:10px;margin-top:24px;max-width:520px}
+.facts div{background:#fff;border:1px solid var(--peach-2);border-radius:14px;padding:12px 14px;display:grid;gap:2px;min-width:0}
+.facts b{font:700 24px/1.1 var(--head);color:var(--ink)}
+.facts span{font-size:13px;line-height:1.35;color:var(--muted)}
+.assure{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;line-height:1.45;color:var(--muted);margin-top:12px;max-width:46ch}
+.assure .ic{width:16px;height:16px;color:var(--mint-ink);margin-top:2px;stroke-width:2.2}
 .ticks{display:flex;flex-wrap:wrap;gap:10px 18px;margin:24px 0 0;padding:0;list-style:none;font-weight:600;color:var(--ink);font-size:15px}
 .ticks li{display:flex;align-items:center;gap:6px}
 .ticks .ic{width:18px;height:18px;color:var(--mint-ink);stroke-width:2.4}
 
 /* phone mock */
-.mock{position:relative;justify-self:center;width:min(320px, 100%)}
+.mock{position:relative;justify-self:center;width:min(460px, 100%)}
+.hero-photo{position:relative;margin:0 0 0 auto;width:80%;max-width:100%;aspect-ratio:4/5;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(20,33,61,.4);background:var(--peach-2)}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.hero-photo figcaption{position:absolute;right:12px;top:12px;font:600 11px/1 var(--body);color:var(--ink);background:rgba(255,255,255,.88);padding:5px 9px;border-radius:999px}
+.mock .phone{position:relative;width:64%;margin-top:-58%}
+@media (max-width:520px){
+  .hero-photo{width:86%}
+  .mock .phone{width:78%;margin-top:-34%}
+  .screen.chat .msg:nth-last-of-type(-n+2){display:none}
+}
 .phone{background:var(--navy);border-radius:40px;padding:10px;box-shadow:0 30px 60px -25px rgba(20,33,61,.45)}
 .screen{background:#F7F5F3;border-radius:31px;padding:20px 14px 18px;display:grid;gap:10px}
 .screen.chat{background:#EFE9E3;padding:0 0 14px;gap:8px;overflow:hidden}
@@ -238,9 +253,9 @@ footer{padding-block:40px 120px;font-size:14px;color:var(--muted)}
 footer .wrap{display:grid;gap:10px}
 
 /* sticky bar */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));display:flex;gap:12px;align-items:center;justify-content:space-between;transition:transform .25s ease}
-.sticky p{font:600 14px/1.3 var(--head);color:var(--ink)}
-.sticky small{display:block;font:400 12.5px var(--body);color:var(--muted)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));display:flex;flex-direction:column;gap:6px;align-items:stretch;transition:transform .25s ease}
+.sticky .btn{width:100%;box-shadow:none;padding:15px 18px}
+.sticky small{display:block;text-align:center;font:400 12.5px var(--body);color:var(--muted)}
 .sticky.off{transform:translateY(110%)}
 @media (min-width:900px){.sticky{display:none}}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -275,13 +290,19 @@ footer .wrap{display:grid;gap:10px}
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="pill"><b></b>Now enrolling · Delhi pilot · 50 seats</span>
+        <span class="pill"><b></b>Now enrolling · Video consults across India</span>
         <h1>Manage your weight with a <span>doctor and a coach</span> in your corner</h1>
         <p class="sub">A doctor-led programme built around Indian food, your routine and your blood reports. Medical treatment is added only if your doctor says it's right for you.</p>
+        <div class="facts">
+          <div><b>40+</b><span>markers tested at home</span></div>
+          <div><b>MD</b><span>physician-led care</span></div>
+          <div><b>Video</b><span>consults from anywhere in India</span></div>
+        </div>
         <div class="hero-cta">
           <a class="btn" href="#fit" data-cta="hero">Check if you're eligible</a>
-          <small>Plans from <b style="color:var(--ink)">₹3,500 a month</b><br>Free check · no payment now · cancel anytime</small>
+          <small>Plans from <b style="color:var(--ink)">₹3,500 a month</b><br>Free check · no payment now</small>
         </div>
+        <p class="assure"><svg class="ic"><use href="#i-shield"/></svg>Treatment only if your doctor finds it right and safe for you. Results vary.</p>
         <ul class="ticks">
           <li><svg class="ic"><use href="#i-check"/></svg>Blood test at home</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Video doctor consults</li>
@@ -290,6 +311,7 @@ footer .wrap{display:grid;gap:10px}
       </div>
 
       <div class="mock" aria-hidden="true">
+        <figure class="hero-photo"><picture><source srcset="hero.webp" type="image/webp"><img src="hero.jpg" alt="" width="900" height="1121" fetchpriority="high"></picture><figcaption>AI-generated image</figcaption></figure>
         <div class="phone"><div class="screen chat">
           <div class="chat-top"><span class="av">S</span><p>Sthira care team<small>Coach Neha · doctor on your plan</small></p></div>
           <span class="day">Today</span>
@@ -335,7 +357,7 @@ footer .wrap{display:grid;gap:10px}
         <li><span class="when">Months 1 to 6</span><h3>Your coach on WhatsApp</h3><p>Send meal photos and your weekly weight to your coach. Weekly check-ins and quick answers when you're stuck.</p></li>
         <li><span class="when">After 6 months</span><h3>Maintain</h3><p>Monthly weigh-ins and quarterly blood tests so your progress holds.</p></li>
       </ol>
-      <div style="margin-top:28px"><a class="btn" href="#fit" data-cta="how_it_works">Check if you're eligible</a></div>
+      <div style="margin-top:28px"><a class="btn" href="#fit" data-cta="how_it_works">Check if you're eligible</a><p class="assure"><svg class="ic"><use href="#i-shield"/></svg>Treatment only if your doctor finds it right and safe for you. Results vary.</p></div>
     </div>
   </section>
 
@@ -370,7 +392,7 @@ footer .wrap{display:grid;gap:10px}
 
   <section class="sec" id="plans">
     <div class="wrap">
-      <div class="sec-head"><p class="kicker">Founding member pricing</p><h2>Pick your programme length</h2><p>Nothing is charged now. Joining the waitlist holds this price for you when the cohort opens. All prices include taxes.</p></div>
+      <div class="sec-head"><p class="kicker">Founding member pricing</p><h2>Pick your programme length</h2><p>Nothing is charged now. Joining the waitlist holds this price for you when we start. All prices include taxes.</p></div>
       <div class="plans">
         <article class="plan">
           <h3>1 month</h3><p class="for">Try it at the starting dose</p>
@@ -415,7 +437,7 @@ footer .wrap{display:grid;gap:10px}
 
   <section class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head"><p class="kicker">Results you can check</p><h2>We track more than your weight</h2><p>Every cohort's results will be published, including the numbers that don't flatter us.</p></div>
+      <div class="sec-head"><p class="kicker">Results you can check</p><h2>We track more than your weight</h2><p>Our members' results will be published, including the numbers that don't flatter us.</p></div>
       <div class="measure">
         <span><svg class="ic"><use href="#i-ruler"/></svg>Waist in cm</span>
         <span><svg class="ic"><use href="#i-dumbbell"/></svg>Muscle kept</span>
@@ -498,7 +520,7 @@ footer .wrap{display:grid;gap:10px}
               <div class="f"><label for="f_name">Your name</label><input id="f_name" name="name" type="text" autocomplete="name" required placeholder="Priya Sharma"></div>
               <div class="f"><label for="f_phone">WhatsApp number</label><input id="f_phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" required pattern="[6-9][0-9]{9}" placeholder="98XXXXXXXX"><span class="hint">10 digits. We'll message only about the programme.</span></div>
             </div>
-            <div class="f"><label for="f_city">City</label><input id="f_city" name="city" type="text" autocomplete="address-level2" required placeholder="New Delhi"></div>
+            <div class="f"><label for="f_city">City</label><input id="f_city" name="city" type="text" autocomplete="address-level2" required placeholder="Your city"></div>
             <label class="consent"><input id="f_consent" name="consent" type="checkbox" required><span>I agree to be contacted on WhatsApp or phone about this programme, and to my answers being stored so a doctor can assess fit. I can ask for my data to be deleted at any time.</span></label>
           </div>
 
@@ -507,13 +529,13 @@ footer .wrap{display:grid;gap:10px}
             <button class="back" type="button" id="qBack" hidden>Back</button>
             <button class="btn" type="submit" id="qNext">Continue</button>
           </div>
-          <p class="fine" style="margin-top:14px">This check is not a diagnosis or medical advice.</p>
+          <p class="fine" style="margin-top:14px">Treatment only if your doctor finds it right and safe for you. This check is not a diagnosis or medical advice.</p>
         </form>
 
         <div class="done" id="done" hidden>
           <span class="big"><svg class="ic"><use href="#i-check"/></svg></span>
           <h3 id="doneTitle">You're on the list</h3>
-          <p id="doneText">We'll message you on WhatsApp when the Delhi cohort opens and book your home blood test first. Your founding price is held.</p>
+          <p id="doneText">We'll message you on WhatsApp to book your home blood test and doctor consult. Your founding price is held.</p>
           <p style="font-weight:700;color:var(--ink);margin-top:6px">Doing this with a friend helps. Share your link:</p>
           <div class="share"><code id="refLink"></code><button class="btn light" type="button" id="copyBtn">Copy link</button></div>
           <p class="fine" id="copyMsg" hidden></p>
@@ -528,9 +550,9 @@ footer .wrap{display:grid;gap:10px}
       <div class="faq">
         <details><summary>Is this a medication programme?<svg class="ic"><use href="#i-down"/></svg></summary><p>It's a doctor-led programme where coaching, food and strength come first. Treatment is included only if your doctor prescribes it after your blood test and consult. If it isn't right for you, you get a refund except the blood test, or you can continue on coaching and nutrition alone.</p></details>
         <details><summary>Who are the doctors?<svg class="ic"><use href="#i-down"/></svg></summary><p>The clinical protocol is designed and supervised by a physician with an MD in Internal Medicine. Every prescription is written by a qualified specialist after a consult and blood work.</p></details>
-        <details><summary>What results can I expect?<svg class="ic"><use href="#i-down"/></svg></summary><p>We won't promise a number. Results depend on your starting point, your health and how closely you follow the plan. We measure carefully and publish every cohort's real results.</p></details>
+        <details><summary>What results can I expect?<svg class="ic"><use href="#i-down"/></svg></summary><p>We won't promise a number. Results depend on your starting point, your health and how closely you follow the plan. We measure carefully and publish our members' real results.</p></details>
         <details><summary>What happens after 6 months?<svg class="ic"><use href="#i-down"/></svg></summary><p>You can move to Maintain: monthly weigh-ins and quarterly blood tests. If you were on treatment, your doctor steps it down gradually while your habits take over.</p></details>
-        <details><summary>Where is it available?<svg class="ic"><use href="#i-down"/></svg></summary><p>The first cohort is in Delhi NCR, with blood tests at home. Consults and coaching are online, so more cities will follow.</p></details>
+        <details><summary>Where is it available?<svg class="ic"><use href="#i-down"/></svg></summary><p>Doctor consults and coaching happen on video and WhatsApp, so you can join from anywhere in India. We'll confirm home blood tests and medicine delivery for your pin code before you start.</p></details>
         <details><summary>What happens to my information?<svg class="ic"><use href="#i-down"/></svg></summary><p>Your answers are used only to assess fit and contact you about the programme. We don't sell or share them. To have them deleted, email <a href="mailto:hello@tinkrlabs.ai">hello@tinkrlabs.ai</a> or reply "delete" to any of our WhatsApp messages.</p></details>
       </div>
     </div>
@@ -539,7 +561,7 @@ footer .wrap{display:grid;gap:10px}
   <section class="sec" style="padding-top:0">
     <div class="wrap">
       <div class="close">
-        <div style="display:grid;gap:10px"><h2>50 seats in the first Delhi cohort</h2><p>Check your eligibility in 2 minutes. No payment now.</p></div>
+        <div style="display:grid;gap:10px"><h2>Start with a free eligibility check</h2><p>Check your eligibility in 2 minutes. No payment now.</p><p style="font-size:14px">Treatment only if your doctor finds it right and safe for you. Results vary.</p></div>
         <a class="btn" href="#fit" data-cta="closing">Check if you're eligible</a>
       </div>
     </div>
@@ -549,15 +571,15 @@ footer .wrap{display:grid;gap:10px}
 <footer>
   <div class="wrap">
     <a class="logo" href="#" style="font-size:18px"><i style="width:22px;height:22px"></i>sthira</a>
-    <p>Physician-led weight management. Pilot programme, Delhi.</p>
+    <p>Physician-led weight management. Pilot programme. Video consults across India.</p>
     <p>Questions or data requests: <a href="mailto:hello@tinkrlabs.ai">hello@tinkrlabs.ai</a></p>
     <p>Information on this page is general and not a substitute for medical advice. In an emergency, call 112.</p>
   </div>
 </footer>
 
 <div class="sticky" id="sticky">
-  <p>Free eligibility check<small>2 minutes · no payment</small></p>
-  <a class="btn" href="#fit" data-cta="sticky" style="padding:13px 18px;font-size:15px;box-shadow:none">Check now</a>
+  <a class="btn" href="#fit" data-cta="sticky">Check if you're eligible · Free →</a>
+  <small>2 minutes · no payment now · cancel anytime</small>
 </div>
 
 <script>
