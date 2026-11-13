@@ -605,6 +605,10 @@ footer .wrap{display:grid;gap:10px}
       .catch(function(){ return new Promise(function(r){ setTimeout(r, 1500); }).then(function(){ return post(body); }).then(function(){ return true; }, function(){ return false; }); });
   }
   send("view");
+  // Resend a sign-up that didn't get through on an earlier visit.
+  try { var pend = localStorage.getItem("sthira_pending");
+    if (pend && ENDPOINT) send("signup", JSON.parse(pend)).then(function(ok){ if (ok) localStorage.removeItem("sthira_pending"); });
+  } catch(e){}
 
   // ---- CTA + plan clicks ----
   document.querySelectorAll("[data-cta]").forEach(function(a){ a.addEventListener("click", function(){ send("cta_click", { cta: a.dataset.cta }); }); });
@@ -698,7 +702,12 @@ footer .wrap{display:grid;gap:10px}
       goal: fd.get("goal"), tier: fd.get("tier"), consent: "yes"
     };
     next.disabled = true; next.textContent = "Saving…";
-    send("signup", data).then(function(){
+    // Don't make the person wait on the sheet: show success within 1.5 s; keep a copy to resend if the request failed.
+    var sent = send("signup", data).then(function(ok){
+      if (!ok && ENDPOINT) { try { localStorage.setItem("sthira_pending", JSON.stringify(data)); } catch(e){} }
+      return ok;
+    });
+    Promise.race([sent, new Promise(function(r){ setTimeout(r, 1500); })]).then(function(){
       form.hidden = true;
       var d = document.getElementById("done"); d.hidden = false;
       document.getElementById("doneTitle").textContent = "You're on the list, " + data.name.split(" ")[0];
