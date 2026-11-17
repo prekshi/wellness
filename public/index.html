@@ -4,8 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Sthira</title>
-<meta name="description" content="Doctor-led weight care. Home blood test, a video consult with an MD physician, and monthly reviews.">
+<title>Sthira · Doctor-led weight care</title>
+<meta name="description" content="Doctor-led weight care: home blood tests, monthly doctor reviews, medicine included. Plans from ₹4,000 a month.">
+<meta property="og:title" content="Sthira · Doctor-led weight care">
+<meta property="og:description" content="Home blood tests, monthly doctor reviews, medicine included. Plans from ₹4,000 a month.">
+<meta property="og:image" content="https://wellness.tinkrlabs.ai/hero.jpg">
+<meta property="og:url" content="https://wellness.tinkrlabs.ai/">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
@@ -194,7 +199,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .q-prog i{display:block;height:100%;background:var(--brand);border-radius:99px;transition:width .3s ease}
 .step{display:grid;gap:20px}
 .step h3{font-size:clamp(21px, 3vw, 26px)}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:14px;align-items:start}
+@media (max-width:560px){.grid2.contact{grid-template-columns:1fr}}
 .f{display:grid;gap:6px;min-width:0}
 .f label,.lg{font:600 14.5px/1.3 var(--body);color:var(--ink)}
 .f .hint{font-size:13px;color:var(--muted)}
@@ -290,23 +296,23 @@ footer .wrap{display:grid;gap:10px}
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="pill"><b></b>Now enrolling · Video consults across India</span>
-        <h1>Weight is a <span>medical condition</span>. See a doctor who treats it.</h1>
-        <p class="sub">A home blood test and a video consult with an MD physician, who reviews your reports and discusses the treatment options that suit you. Then monthly reviews, with side effects managed.</p>
+        <span class="pill"><b></b>Now enrolling · Doctor-led GLP-1 plans</span>
+        <h1>Get more from <span style="white-space:nowrap;color:inherit">GLP-1</span>, with <span>a doctor and a plan</span> behind it</h1>
+        <p class="sub">Your GLP-1 medication, prescribed and titrated month by month by an MD physician. Side effects managed, muscle protected, and a taper at the end so your progress holds.</p>
         <div class="facts">
+          <div><b>Monthly</b><span>dose reviews by your doctor</span></div>
           <div><b>40+</b><span>markers tested at home</span></div>
-          <div><b>MD</b><span>physician on video</span></div>
-          <div><b>Monthly</b><span>doctor reviews</span></div>
+          <div><b>MD</b><span>physician prescribes</span></div>
         </div>
         <div class="hero-cta">
           <a class="btn" href="#fit" data-cta="hero">Check if you're eligible</a>
-          <small>Blood test + doctor consult <b style="color:var(--ink)">₹1,499</b><br>Free eligibility check · pay only when you book</small>
+          <small>Plans from <b style="color:var(--ink)">₹4,000 a month</b><br>Free check · no payment now</small>
         </div>
-        <p class="assure"><svg class="ic"><use href="#i-shield"/></svg>Any treatment is prescribed only after your tests and consult, and only if it's right and safe for you.</p>
+        <p class="assure"><svg class="ic"><use href="#i-shield"/></svg>GLP-1 is prescribed only after blood work and a doctor consult, and only if it's right and safe for you.</p>
         <ul class="ticks">
-          <li><svg class="ic"><use href="#i-check"/></svg>Blood test at home</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>MD physician on video</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Monthly reviews</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Doctor-led titration</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Protein and strength plan</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Side effects managed</li>
         </ul>
       </div>
 
@@ -314,12 +320,12 @@ footer .wrap{display:grid;gap:10px}
         <figure class="hero-photo"><picture><source srcset="/hero.webp" type="image/webp"><img src="/hero.jpg" alt="" width="900" height="1121" fetchpriority="high"></picture><figcaption>AI-generated image</figcaption></figure>
         <div class="phone"><div class="screen chat">
           <div class="chat-top"><span class="av">S</span><p>Sthira care team<small>Your doctor and care team</small></p></div>
-          <span class="day">Today</span>
-          <div class="msg in"><div class="file"><svg class="ic"><use href="#i-flask"/></svg><span>Blood report.pdf<small>42 markers</small></span></div>Your report is in. Your doctor will go through it on your video consult, Thursday 6 pm.<time>9:12</time></div>
-          <div class="msg out">Thank you. Will the doctor check my thyroid too?<time>9:20</time></div>
-          <div class="msg in">Yes, thyroid, HbA1c, insulin, lipids and liver are all in your report.<time>9:24</time></div>
-          <div class="msg in">After the consult you'll get your plan here, with your first monthly review booked.<time>9:25</time></div>
-          <div class="msg out">Perfect 👍<time>9:31</time></div>
+          <span class="day">Week 3</span>
+          <div class="msg in">Weekly check-in: any nausea or tummy trouble after this week's dose?<time>9:05</time></div>
+          <div class="msg out">A little on Tuesday, fine since<time>9:20</time></div>
+          <div class="msg in">That's common at this stage. Doctor says hold this dose one more week. Smaller meals, protein first.<time>9:41</time></div>
+          <div class="msg in">Protein today: <b>72 of 90 g</b>. Curd or eggs at dinner gets you there.<time>6:10</time></div>
+          <div class="msg out">Done. Strength session tomorrow 💪<time>8:30</time></div>
         </div></div>
       </div>
     </div>
@@ -328,9 +334,9 @@ footer .wrap{display:grid;gap:10px}
   <section class="trust">
     <div class="wrap">
       <ul>
-        <li><svg class="ic"><use href="#i-steth"/></svg>Led by an MD physician</li>
-        <li><svg class="ic"><use href="#i-flask"/></svg>40+ marker test at home</li>
-        <li><svg class="ic"><use href="#i-pause"/></svg>Reviewed every month</li>
+        <li><svg class="ic"><use href="#i-steth"/></svg>Prescribed by an MD physician</li>
+        <li><svg class="ic"><use href="#i-pause"/></svg>Titrated monthly, never on autopilot</li>
+        <li><svg class="ic"><use href="#i-dumbbell"/></svg>Protein and strength to protect muscle</li>
         <li><svg class="ic"><use href="#i-shield"/></svg>Your health data stays private</li>
       </ul>
     </div>
@@ -338,46 +344,39 @@ footer .wrap{display:grid;gap:10px}
 
   <section class="sec">
     <div class="wrap">
-      <div class="sec-head"><p class="kicker">Why it's hard</p><h2>It isn't a willpower problem</h2><p>Body weight is regulated by hormones from your gut and brain. When you eat less, your body pushes back: hunger rises and your metabolism slows. That's why diets alone so often stop working, and why a doctor can help.</p></div>
+      <div class="sec-head"><p class="kicker">Is this for you?</p><h2>For people who want GLP-1 done properly</h2></div>
       <ul class="foryou">
-        <li><svg class="ic"><use href="#i-check"/></svg>You've tried diets and exercise, and the weight keeps coming back</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You're considering GLP-1 and want a doctor to check it suits you first</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You're already on GLP-1 without a plan for dose, protein or training</li>
         <li><svg class="ic"><use href="#i-check"/></svg>You have PCOS, prediabetes, thyroid or fatty liver</li>
-        <li><svg class="ic"><use href="#i-check"/></svg>You want a doctor to read your reports, not a generic plan</li>
-        <li><svg class="ic"><use href="#i-check"/></svg>You want to understand your treatment options, safely</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You want to keep your muscle, and keep your results after you stop</li>
       </ul>
     </div>
   </section>
 
   <section class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head"><p class="kicker">How it works</p><h2>From blood test to treatment, in four steps</h2></div>
+      <div class="sec-head"><p class="kicker">How it works</p><h2>From blood test to a GLP-1 plan, in four steps</h2></div>
       <ol class="steps">
-        <li><span class="when">Day 1</span><h3>Blood test at home</h3><p>40+ markers including thyroid, HbA1c, insulin, lipids and liver, collected at your home.</p></li>
-        <li><span class="when">Day 3</span><h3>Doctor consult</h3><p>A video consult with an MD physician on your reports, history and goals.</p></li>
-        <li><span class="when">Same week</span><h3>Your treatment plan</h3><p>Your doctor recommends what suits you, which may include medical treatment if it's appropriate.</p></li>
-        <li><span class="when">Every month</span><h3>Reviews and support</h3><p>Monthly doctor reviews, side effects managed, and a care team on WhatsApp between consults.</p></li>
+        <li><span class="when">Week 1</span><h3>Blood test at home</h3><p>40+ markers including thyroid, sugar, insulin, lipids and liver, collected at your home.</p></li>
+        <li><span class="when">Week 1</span><h3>Doctor consult</h3><p>A video consult on your reports and history. If GLP-1 is right for you, your doctor prescribes it and sets your protein target.</p></li>
+        <li><span class="when">Every month</span><h3>Titrate and review</h3><p>Your dose starts low and your doctor steps it up month by month, held or stepped back if side effects flare. A protein target and strength routine protect your muscle.</p></li>
+        <li><span class="when">End of plan</span><h3>Taper and maintain</h3><p>A doctor-guided step-down, with the habits and muscle you've built carrying you forward.</p></li>
       </ol>
-      <div style="margin-top:28px"><a class="btn" href="#fit" data-cta="how_it_works">Check if you're eligible</a><p class="assure"><svg class="ic"><use href="#i-shield"/></svg>Any treatment is prescribed only if your doctor finds it right and safe for you.</p></div>
+      <div style="margin-top:28px"><a class="btn" href="#fit" data-cta="how_it_works">Check if you're eligible</a><p class="assure"><svg class="ic"><use href="#i-shield"/></svg>GLP-1 is prescribed only if your doctor finds it right and safe for you.</p></div>
     </div>
   </section>
 
-  <section class="sec" style="padding-top:0" id="plans">
+  <section class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head"><p class="kicker">Your first step</p><h2>Blood test and doctor consult</h2></div>
-      <div class="plans" style="grid-template-columns:minmax(0,520px)">
-        <article class="plan hl">
-          <span class="tag">Start here</span>
-          <h3>Metabolic check + MD consult</h3><p class="for">Know what's driving your weight, and your options</p>
-          <p class="price">₹1,499<small> one-time</small></p>
-          <p class="pm">Adjusted against your plan if you continue</p>
-          <ul>
-            <li><svg class="ic"><use href="#i-check"/></svg>40+ marker blood test, collected at home</li>
-            <li><svg class="ic"><use href="#i-check"/></svg>Video consult with an MD physician</li>
-            <li><svg class="ic"><use href="#i-check"/></svg>Your written treatment plan</li>
-            <li><svg class="ic"><use href="#i-check"/></svg>Plans from ₹4,000 a month if you continue</li>
-          </ul>
-          <a class="btn" href="#fit" data-cta="consult_card">Check if you're eligible</a>
-        </article>
+      <div class="sec-head"><p class="kicker">What's in your plan</p><h2>GLP-1, managed properly</h2></div>
+      <div class="inc">
+        <div><span class="badge"><svg class="ic"><use href="#i-pause"/></svg></span><h3>Doctor-led titration</h3><p>Your dose is reviewed every month against your progress, side effects and blood work. Custom titration is included in the price.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-chat"/></svg></span><h3>Side-effect management</h3><p>Weekly check-ins on WhatsApp for nausea, constipation or low energy. Your doctor holds or adjusts the dose when needed.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-dumbbell"/></svg></span><h3>Muscle protection</h3><p>A daily protein target set by your doctor and a short strength routine, 2 to 3 times a week, so you keep muscle while on GLP-1.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-video"/></svg></span><h3>Monthly doctor check-ins</h3><p>A video review with your physician every month: progress, side effects, reports and the next dose.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Medicine delivered</h3><p>Dispensed on prescription by a licensed pharmacy partner and delivered home. Included in your plan price.</p></div>
+        <div><span class="badge"><svg class="ic"><use href="#i-flask"/></svg></span><h3>Repeat blood tests</h3><p>Sugar, lipids, liver and other markers re-checked during your plan, not just the scale.</p></div>
       </div>
     </div>
   </section>
@@ -386,20 +385,78 @@ footer .wrap{display:grid;gap:10px}
     <div class="wrap med-grid">
       <div style="display:grid;gap:14px">
         <p class="kicker">Clinical safety</p>
-        <h2>Supervised from the first consult</h2>
-        <p>Weight treatment works best under a doctor's eye. Every decision is made by your physician, based on your reports, and reviewed every month.</p>
+        <h2>Side effects, managed from day one</h2>
+        <p>GLP-1 works best when it's supervised. Without a plan, people stay on the wrong dose, eat too little protein and give up muscle along with fat. Every part of Sthira is built to prevent that.</p>
       </div>
       <ul class="med-list">
-        <li><svg class="ic"><use href="#i-steth"/></svg><div><b>Prescribed by a physician</b><span>Only after blood work and a consult. Nothing is dispensed without a prescription.</span></div></li>
-        <li><svg class="ic"><use href="#i-pause"/></svg><div><b>Reviewed every month</b><span>Your doctor checks progress and side effects, and adjusts your plan.</span></div></li>
-        <li><svg class="ic"><use href="#i-dumbbell"/></svg><div><b>Muscle protected</b><span>A protein target and strength routine so you keep muscle as your weight changes.</span></div></li>
+        <li><svg class="ic"><use href="#i-pause"/></svg><div><b>Nausea and GI side effects</b><span>Doses go up slowly and are held or stepped back if side effects flare. Never a fixed schedule on autopilot.</span></div></li>
+        <li><svg class="ic"><use href="#i-dumbbell"/></svg><div><b>Muscle protection</b><span>Without supervision, a large share of the weight that comes off can be muscle. Protein targets and strength training are part of every plan.</span></div></li>
+        <li><svg class="ic"><use href="#i-chart"/></svg><div><b>Rebound protection</b><span>Longer plans end with a doctor-guided taper and habits built to last beyond the medication.</span></div></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="plans">
+    <div class="wrap">
+      <div class="sec-head"><p class="kicker">Founding member pricing</p><h2>Which plan is right for you?</h2><p>Nothing is charged now. Joining the waitlist holds this price for you when we start. All prices include taxes.</p></div>
+      <div class="plans">
+        <article class="plan">
+          <h3>1 month</h3><p class="for">See if GLP-1 suits you first</p>
+          <p class="price">₹4,999<small> total</small></p>
+          <ul>
+            <li><svg class="ic"><use href="#i-check"/></svg>Home blood test and doctor consult</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>GLP-1 medication, 4 weekly doses, if prescribed</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Muscle-protection protocol</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Month-end doctor review</li>
+          </ul>
+          <button class="btn light" type="button" data-tier="m1">Choose 1 month</button>
+        </article>
+        <article class="plan hl">
+          <span class="tag">Recommended</span>
+          <h3>4 months</h3><p class="for">The full titration, month by month</p>
+          <p class="price">₹15,999<small> total</small></p>
+          <p class="pm">₹4,000 a month</p>
+          <ul>
+            <li><svg class="ic"><use href="#i-check"/></svg>GLP-1 medication, 16 weekly doses, if prescribed</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Custom titration by your doctor, included</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>4 monthly doctor check-ins</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>2 blood panels at home, 40+ markers</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Side-effect and muscle-protection support on WhatsApp</li>
+          </ul>
+          <button class="btn" type="button" data-tier="m4">Choose 4 months</button>
+        </article>
+        <article class="plan">
+          <h3>6 months</h3><p class="for">The full clinical protocol, with a taper</p>
+          <p class="price">₹26,999<small> total</small></p>
+          <p class="pm">₹4,500 a month</p>
+          <ul>
+            <li><svg class="ic"><use href="#i-check"/></svg>Everything in 4 months</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>GLP-1 medication, 24 weekly doses, if prescribed</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>6 monthly doctor check-ins</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Doctor-guided taper at the end</li>
+          </ul>
+          <button class="btn light" type="button" data-tier="m6">Choose 6 months</button>
+        </article>
+      </div>
+      <p class="note">GLP-1 is prescribed only after your blood test and consult, and only when clinically appropriate. Dispensed through a licensed pharmacy partner. Full refund if you aren't eligible, except the blood test.</p>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><p class="kicker">Results you can check</p><h2>We track more than the scale</h2><p>Our members' results will be published, including the numbers that don't flatter us.</p></div>
+      <div class="measure">
+        <span><svg class="ic"><use href="#i-ruler"/></svg>Waist in cm</span>
+        <span><svg class="ic"><use href="#i-dumbbell"/></svg>Muscle kept</span>
+        <span><svg class="ic"><use href="#i-flask"/></svg>HbA1c, lipids, liver</span>
+        <span><svg class="ic"><use href="#i-chart"/></svg>Results held after the taper</span>
+      </div>
     </div>
   </section>
 
   <section class="sec quiz-sec" id="fit">
     <div class="wrap">
-      <div class="sec-head" style="margin-inline:auto;text-align:center;justify-items:center"><p class="kicker">Free eligibility check</p><h2>See if Sthira fits you</h2><p>Four short steps. Then we'll WhatsApp you to book your blood test and consult.</p></div>
+      <div class="sec-head" style="margin-inline:auto;text-align:center;justify-items:center"><p class="kicker">Free eligibility check</p><h2>See if Sthira fits you</h2><p>Four short steps. Your doctor confirms whether GLP-1 is right for you at your consult.</p></div>
 
       <div class="quiz">
         <form id="quiz" novalidate>
@@ -439,7 +496,7 @@ footer .wrap{display:grid;gap:10px}
                 <label class="chip"><input type="checkbox" name="tried" value="diet">Diet plans</label>
                 <label class="chip"><input type="checkbox" name="tried" value="gym">Gym or trainer</label>
                 <label class="chip"><input type="checkbox" name="tried" value="app">A fitness app</label>
-                <label class="chip"><input type="checkbox" name="tried" value="weight_loss_medication">Prescription weight medication</label>
+                <label class="chip"><input type="checkbox" name="tried" value="weight_loss_medication">GLP-1 or other prescription medication</label>
                 <label class="chip"><input type="checkbox" name="tried" value="nothing">Nothing structured yet</label>
               </div>
             </div>
@@ -454,12 +511,18 @@ footer .wrap{display:grid;gap:10px}
               <label class="opt"><input type="radio" name="goal" value="keep_off"><span class="dot"></span>Keeping it off this time</label>
               <label class="opt"><input type="radio" name="goal" value="confidence"><span class="dot"></span>Feeling confident in my body</label>
             </div>
-            <input type="hidden" name="tier" value="undecided">
+            <span class="lg">Which plan would you join?</span>
+            <div class="opts" role="radiogroup" aria-label="Plan">
+              <label class="opt"><input type="radio" name="tier" value="m1" required><span class="dot"></span><span>1 month<small>₹4,999</small></span></label>
+              <label class="opt"><input type="radio" name="tier" value="m4" checked><span class="dot"></span><span>4 months<small>₹15,999 · ₹4,000 a month</small></span></label>
+              <label class="opt"><input type="radio" name="tier" value="m6"><span class="dot"></span><span>6 months<small>₹26,999 · ₹4,500 a month</small></span></label>
+              <label class="opt"><input type="radio" name="tier" value="undecided"><span class="dot"></span><span>Not sure yet<small>The doctor can help me decide</small></span></label>
+            </div>
           </div>
 
           <div class="step" data-step="4" hidden>
             <h3>Where should we reach you?</h3>
-            <div class="grid2">
+            <div class="grid2 contact">
               <div class="f"><label for="f_name">Your name</label><input id="f_name" name="name" type="text" autocomplete="name" required placeholder="Priya Sharma"></div>
               <div class="f"><label for="f_phone">WhatsApp number</label><input id="f_phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" required pattern="[6-9][0-9]{9}" placeholder="98XXXXXXXX"><span class="hint">10 digits. We'll message only about the programme.</span></div>
             </div>
@@ -472,13 +535,13 @@ footer .wrap{display:grid;gap:10px}
             <button class="back" type="button" id="qBack" hidden>Back</button>
             <button class="btn" type="submit" id="qNext">Continue</button>
           </div>
-          <p class="fine" style="margin-top:14px">This check is not a diagnosis or medical advice. Any treatment is prescribed only if your doctor finds it right and safe for you.</p>
+          <p class="fine" style="margin-top:14px">GLP-1 is prescribed only if your doctor finds it right and safe for you. This check is not a diagnosis or medical advice.</p>
         </form>
 
         <div class="done" id="done" hidden>
           <span class="big"><svg class="ic"><use href="#i-check"/></svg></span>
           <h3 id="doneTitle">You're on the list</h3>
-          <p id="doneText">We'll WhatsApp you within 24 hours to book your home blood test and doctor consult (₹1,499, adjusted against your plan if you continue).</p>
+          <p id="doneText">We'll message you on WhatsApp to book your home blood test and doctor consult. Your founding price is held.</p>
           <p style="font-weight:700;color:var(--ink);margin-top:6px">Doing this with a friend helps. Share your link:</p>
           <div class="share"><code id="refLink"></code><button class="btn light" type="button" id="copyBtn">Copy link</button></div>
           <p class="fine" id="copyMsg" hidden></p>
@@ -491,13 +554,17 @@ footer .wrap{display:grid;gap:10px}
     <div class="wrap">
       <div class="sec-head"><p class="kicker">Questions</p><h2>Before you join</h2></div>
       <div class="faq">
-        <details><summary>Will I be prescribed medicine?<svg class="ic"><use href="#i-down"/></svg></summary><p>Not necessarily. Your doctor recommends medical treatment only when your blood tests and health history show it's appropriate, and supervises you throughout. Nothing is dispensed without a prescription.</p></details>
-        <details><summary>What does it cost?<svg class="ic"><use href="#i-down"/></svg></summary><p>The blood test and doctor consult is ₹1,499, adjusted against your plan if you continue. Plans start from ₹4,000 a month, and your doctor explains your options at the consult.</p></details>
-        <details><summary>Who are the doctors?<svg class="ic"><use href="#i-down"/></svg></summary><p>Care is led by a physician with an MD in Internal Medicine. Every prescription is written by a qualified doctor after a consult and blood work.</p></details>
-        <details><summary>What's in the blood test?<svg class="ic"><use href="#i-down"/></svg></summary><p>40+ markers, including thyroid, HbA1c, fasting glucose, insulin, lipids, liver function and kidney function. Your sample is collected at home.</p></details>
-        <details><summary>What results can I expect?<svg class="ic"><use href="#i-down"/></svg></summary><p>We won't promise a number. Results depend on your starting point, your health and your treatment. We track your waist, reports and muscle, not just the scale.</p></details>
-        <details><summary>Where is it available?<svg class="ic"><use href="#i-down"/></svg></summary><p>Consults happen on video and support on WhatsApp, so you can join from anywhere in India. We'll confirm home blood tests for your pin code before you book.</p></details>
-        <details><summary>What happens to my information?<svg class="ic"><use href="#i-down"/></svg></summary><p>Your answers are used only to assess fit and contact you. We don't sell or share them. To have them deleted, email <a href="mailto:hello@tinkrlabs.ai">hello@tinkrlabs.ai</a> or reply "delete" to any of our WhatsApp messages.</p></details>
+        <details><summary>Is this a GLP-1 plan?<svg class="ic"><use href="#i-down"/></svg></summary><p>Yes. It's a doctor-led GLP-1 plan: the medication, titrated by your doctor, with side-effect management and a protein and strength protocol to protect your muscle. GLP-1 is prescribed only after your blood test and consult. If you aren't eligible, you get a full refund except the blood test.</p></details>
+        <details><summary>What doses will I receive?<svg class="ic"><use href="#i-down"/></svg></summary><p>Your doctor starts you on a low dose and reviews it every month. It goes up only as your body tolerates it, and is held or stepped back if side effects flare. Custom titration is included in your plan price.</p></details>
+        <details><summary>Can I get GLP-1 without a prescription?<svg class="ic"><use href="#i-down"/></svg></summary><p>No. GLP-1 medicines are prescription-only in India. You need an assessment by a registered doctor, with blood work, before you start.</p></details>
+        <details><summary>Who shouldn't take GLP-1?<svg class="ic"><use href="#i-down"/></svg></summary><p>It isn't suitable for everyone. Doctors usually avoid it during pregnancy and with certain thyroid or pancreas conditions. Your doctor checks your history and reports before prescribing.</p></details>
+        <details><summary>What side effects should I expect?<svg class="ic"><use href="#i-down"/></svg></summary><p>Nausea and digestive discomfort are common in the first few weeks and usually settle. Doses go up slowly, and your doctor holds or steps back the dose if side effects flare.</p></details>
+        <details><summary>Will GLP-1 cost me muscle?<svg class="ic"><use href="#i-down"/></svg></summary><p>Muscle loss is a known risk when GLP-1 is used without supervision. That's why every plan includes a protein target set with your doctor and a strength routine, and why we track muscle, not just weight.</p></details>
+        <details><summary>Do I need GLP-1 forever?<svg class="ic"><use href="#i-down"/></svg></summary><p>Many people use GLP-1 for a defined period. Longer plans end with a doctor-guided taper, while the habits and muscle you've built help your results hold.</p></details>
+        <details><summary>Who are the doctors?<svg class="ic"><use href="#i-down"/></svg></summary><p>The clinical protocol is designed and supervised by a physician with an MD in Internal Medicine. Every prescription is written by a qualified specialist after a consult and blood work.</p></details>
+        <details><summary>What results can I expect?<svg class="ic"><use href="#i-down"/></svg></summary><p>We won't promise a number. Results depend on your starting point, your health and how closely you follow the plan. We measure carefully and publish our members' real results.</p></details>
+                <details><summary>Where is it available?<svg class="ic"><use href="#i-down"/></svg></summary><p>Doctor consults and check-ins happen on video and WhatsApp, so you can join from anywhere in India. We'll confirm home blood tests and medicine delivery for your pin code before you start.</p></details>
+        <details><summary>What happens to my information?<svg class="ic"><use href="#i-down"/></svg></summary><p>Your answers are used only to assess fit and contact you about the programme. We don't sell or share them. To have them deleted, email <a href="mailto:hello@tinkrlabs.ai">hello@tinkrlabs.ai</a> or reply "delete" to any of our WhatsApp messages.</p></details>
       </div>
     </div>
   </section>
@@ -505,7 +572,7 @@ footer .wrap{display:grid;gap:10px}
   <section class="sec" style="padding-top:0">
     <div class="wrap">
       <div class="close">
-        <div style="display:grid;gap:10px"><h2>Start with a free eligibility check</h2><p>Check your eligibility in 2 minutes. No payment now.</p><p style="font-size:14px">Any treatment is prescribed only if your doctor finds it right and safe for you. Results vary.</p></div>
+        <div style="display:grid;gap:10px"><h2>Start with a free eligibility check</h2><p>Check your eligibility in 2 minutes. No payment now.</p><p style="font-size:14px">GLP-1 is prescribed only if your doctor finds it right and safe for you. Results vary.</p></div>
         <a class="btn" href="#fit" data-cta="closing">Check if you're eligible</a>
       </div>
     </div>
@@ -515,7 +582,7 @@ footer .wrap{display:grid;gap:10px}
 <footer>
   <div class="wrap">
     <a class="logo" href="#" style="font-size:18px"><i style="width:22px;height:22px"></i>sthira</a>
-    <p>Doctor-led weight care. Pilot programme. Video consults across India.</p>
+    <p>Doctor-led GLP-1 plans. Pilot programme. Video consults across India.</p>
     <p>Questions or data requests: <a href="mailto:hello@tinkrlabs.ai">hello@tinkrlabs.ai</a></p>
     <p>Information on this page is general and not a substitute for medical advice. In an emergency, call 112.</p>
   </div>
@@ -523,7 +590,7 @@ footer .wrap{display:grid;gap:10px}
 
 <div class="sticky" id="sticky">
   <a class="btn" href="#fit" data-cta="sticky">Check if you're eligible · Free →</a>
-  <small>2 minutes · free · pay only when you book</small>
+  <small>2 minutes · no payment now · cancel anytime</small>
 </div>
 
 <script>
@@ -613,7 +680,7 @@ footer .wrap{display:grid;gap:10px}
     label.textContent = "Step " + n + " of 4"; name.textContent = names[n - 1];
     bar.style.width = (n * 25) + "%";
     back.hidden = n === 1;
-    next.textContent = n === 4 ? "Book my consult" : "Continue";
+    next.textContent = n === 4 ? "Join the waitlist" : "Continue";
     if (n > 1) send("quiz_step", { cta: "step_" + n });
     form.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -654,7 +721,7 @@ footer .wrap{display:grid;gap:10px}
     Promise.race([sent, new Promise(function(r){ setTimeout(r, 1500); })]).then(function(){
       form.hidden = true;
       var d = document.getElementById("done"); d.hidden = false;
-      document.getElementById("doneTitle").textContent = "Thanks, " + data.name.split(" ")[0];
+      document.getElementById("doneTitle").textContent = "You're on the list, " + data.name.split(" ")[0];
       if (!ENDPOINT) document.getElementById("doneText").textContent = "Preview only: this answer was not saved. On the live page it goes to your sign-up sheet.";
       document.getElementById("refLink").textContent = location.origin + location.pathname + "?ref=" + sid;
       d.scrollIntoView({ behavior: "smooth", block: "center" });
